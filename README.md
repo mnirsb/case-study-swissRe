@@ -1,6 +1,6 @@
 # **Case Study: Service A & Service B**
 
-## **mvn clean package ** Before you run.
+## **mvn clean package**
 
 ## **Overview**
 This case study explains how **Service A** and **Service B** interact with each other, focusing on transactional boundaries, threading models, failure handling, and recovery. It also includes details about the **Docker Compose** setup used for running both services together.
