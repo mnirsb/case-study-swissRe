@@ -130,7 +130,4 @@ This setup ensures:
 ✅ Services run independently but coordinate efficiently.
 ✅ Docker Compose makes deployment easy.
 
-You can start everything with **one command**, and the system will take care of failures, retries, and recovery automatically!
-
-🚀 **Happy coding!**
 
