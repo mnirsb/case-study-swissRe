@@ -3,7 +3,7 @@ FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-# Copy the built JAR file (adjust the JAR name as per your build output)
+# Copy the built JAR file
 COPY target/*.jar app.jar
 
 # Expose 7081 for Service B
