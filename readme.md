@@ -1,5 +1,5 @@
 ### Case Study Write-Up: Implementation Details of Service A and Service B
-### Before Running, Please run **mvn clean package**.
+### Before Running, Please run - **mvn clean package**.
 #### How Service A Manages Transactions
 Service A is a Spring Boot REST service running on port 7080, designed to handle user requests by working with Service B. One of the trickiest parts was figuring out how to manage transactions properly, especially since we’re dealing with both a local database and an external service call.
 
