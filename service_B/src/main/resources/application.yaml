@@ -1,0 +1,39 @@
+server:
+  port: 7081
+  tomcat:
+    threads:
+      max: 200  # Matches Service A’s capacity for balanced load handling
+
+spring:
+  application:
+    name: service-b
+  aop:
+    proxy-target-class: true
+
+  # Datasource configuration for H2 in-memory database
+  datasource:
+    url: jdbc:h2:mem:serviceBDB  # H2 in-memory database URL
+    driverClassName: org.h2.Driver  # H2 driver class
+    username: sa  # Default H2 username
+    password: password  # Default H2 password
+    hikari:
+      maximum-pool-size: 10  # Maximum number of database connections
+      minimum-idle: 5  # Minimum number of idle connections
+      idle-timeout: 30000  # Idle timeout in milliseconds (30 seconds)
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.assignment.service_B: DEBUG

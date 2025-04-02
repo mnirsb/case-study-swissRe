@@ -1,0 +1,91 @@
+# Server configuration
+server:
+  port: 7080
+  tomcat:
+    threads:
+      max: 200  # Maximum number of threads for the Tomcat server
+
+# Spring Boot application properties
+spring:
+  application:
+    name: service-a  # Application name for identification in logs and monitoring
+  profiles:
+    active: dev
+  task:
+    scheduling:
+      pool:
+        size: 5
+
+  # Datasource configuration for H2 in-memory database
+  datasource:
+    url: jdbc:h2:mem:testdb  # H2 in-memory database URL
+    driverClassName: org.h2.Driver  # H2 driver class
+    username: sa  # Default H2 username
+    password: password  # Default H2 password
+    hikari:
+      maximum-pool-size: 10  # Maximum number of database connections
+      minimum-idle: 5  # Minimum number of idle connections
+      idle-timeout: 30000  # Idle timeout in milliseconds (30 seconds)
+
+  # H2 console configuration for debugging
+  h2:
+    console:
+      enabled: true  # Enable H2 web console
+      path: /h2-console  # Access path for H2 console
+
+  # JPA and Hibernate configuration
+  jpa:
+    show-sql: true  # Log SQL statements
+    hibernate:
+      ddl-auto: create-drop  # Create and drop schema for in-memory DB
+    properties:
+      hibernate:
+        format_sql: true  # Format SQL in logs for readability
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000       # Connection timeout in milliseconds
+        readTimeout: 5000          # Read timeout in milliseconds
+        loggerLevel: full          # Logging level for debugging
+
+# Resilience4j configuration for fault tolerance
+resilience4j:
+  circuitbreaker:
+    instances:
+      serviceB:
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 3
+        recordExceptions:
+          - java.io.IOException
+          - java.net.SocketTimeoutException
+          - org.springframework.web.client.HttpServerErrorException
+
+  # Retry configuration for Service B
+  retry:
+    instances:
+      serviceBCompensation:
+        maxAttempts: 3
+        waitDuration: 1000
+        enableExponentialBackoff: true
+        exponentialBackoffMultiplier: 2
+
+# Logging configuration
+logging:
+  level:
+    root: INFO  # Root logger level
+    com.assignment.service_A: DEBUG  # Detailed logging for Service A package
+  file: logs/service-a.log
+
+# Custom properties for Service B integration
+service-b:
+  url: http://localhost:7081  # Base URL for Service B
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics

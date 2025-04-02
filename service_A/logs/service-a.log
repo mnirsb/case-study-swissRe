@@ -1,0 +1,31 @@
+2025-04-02 11:20:58.441 [main] INFO  c.a.service_A.ServiceAApplication - Starting ServiceAApplication using Java 21.0.2 with PID 39956 (D:\Assignment\service_A\target\classes started by mmesh in D:\Assignment\service_A)
+2025-04-02 11:20:58.441 [main] DEBUG c.a.service_A.ServiceAApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-02 11:20:58.441 [main] INFO  c.a.service_A.ServiceAApplication - The following 1 profile is active: "dev"
+2025-04-02 11:21:00.366 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-02 11:21:00.460 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2025-04-02 11:21:00.915 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=2b3418cd-4315-3d58-920c-c82bcf995c25
+2025-04-02 11:21:02.154 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 7080 (http)
+2025-04-02 11:21:02.185 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7080"]
+2025-04-02 11:21:02.185 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-02 11:21:02.185 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-02 11:21:02.264 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-02 11:21:02.280 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3708 ms
+2025-04-02 11:21:03.519 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-02 11:21:03.566 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-02 11:21:03.754 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-04-02 11:21:03.754 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-02 11:21:04.744 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-02 11:21:05.388 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-02 11:21:06.632 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-02 11:21:07.213 [main] INFO  c.a.s.recovery.RecoveryService - Recovering incomplete transactions on startup...
+2025-04-02 11:21:07.401 [main] INFO  c.a.s.recovery.RecoveryService - No incomplete transactions found.
+2025-04-02 11:21:09.161 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-04-02 11:21:09.333 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-04-02 11:21:09.462 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7080"]
+2025-04-02 11:21:09.490 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 7080 (http) with context path '/'
+2025-04-02 11:21:09.521 [main] INFO  c.a.service_A.ServiceAApplication - Started ServiceAApplication in 12.156 seconds (process running for 12.985)
+2025-04-02 11:23:30.111 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-02 11:23:30.127 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-02 11:23:30.130 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-02 11:23:30.143 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-02 11:23:30.143 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
